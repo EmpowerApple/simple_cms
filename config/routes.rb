@@ -1,4 +1,13 @@
 SimpleCms::Application.routes.draw do
+
+  get "admin_users/list"
+
+  get "admin_users/new"
+
+  get "admin_users/edit"
+
+  get "admin_users/delete"
+
   #get "demo/index"
 
   # The priority is based upon order of creation:
@@ -51,7 +60,9 @@ SimpleCms::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => 'demo#index'
-
+  
+  match 'admin', :to => 'access#menu'
+  
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
